@@ -49,9 +49,9 @@ def parsing(normal_file, sara_file, out_file, vocab_file, stop_words_file):
                     if (word not in stop_words) and (word in vocab):
                         #print(word)
                         if check:
-                            fp_out.write('%d ' % (label+1))
+                            fp_out.write('%d ' % (label))
                             check = False
-                        fp_out.write('%d ' %(vocab.index(word)+1))
+                        fp_out.write('%d ' %(vocab.index(word)))
                 if not check:
                     fp_out.write('\n')
             line = fp.readline()
