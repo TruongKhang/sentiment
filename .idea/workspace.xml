@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be9ba3d6-5e0b-4267-b8d7-75bf72d8688c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_data_sq.txt" afterPath="$PROJECT_DIR$/data/test_data_sq.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/training_data_sq.txt" afterPath="$PROJECT_DIR$/data/training_data_sq.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model.py" afterPath="$PROJECT_DIR$/model.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preprocessing.py" afterPath="$PROJECT_DIR$/preprocessing.py" />
     </list>
@@ -23,8 +21,8 @@
       <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36">
-              <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="339">
+              <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -35,11 +33,11 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="149">
+              <caret line="96" column="62" lean-forward="false" selection-start-line="96" selection-start-column="62" selection-end-line="96" selection-end-column="62" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1527091453110" expanded="true" signature="1652:1788" ph="..." />
+                <marker date="1527131647073" expanded="true" signature="3539:3678" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,7 +113,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.preprocessing">
     <configuration default="false" name="preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -290,8 +288,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.model" />
-        <item index="1" class="java.lang.String" itemvalue="Python.preprocessing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.preprocessing" />
+        <item index="1" class="java.lang.String" itemvalue="Python.model" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +353,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527091453110" expanded="true" signature="1652:1788" ph="..." />
+            <marker date="1527131647073" expanded="true" signature="3539:3678" ph="..." />
           </folding>
         </state>
       </provider>
@@ -370,8 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        <state relative-caret-position="339">
+          <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -380,11 +378,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="149">
+          <caret line="96" column="62" lean-forward="false" selection-start-line="96" selection-start-column="62" selection-end-line="96" selection-end-column="62" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527091453110" expanded="true" signature="1652:1788" ph="..." />
+            <marker date="1527131647073" expanded="true" signature="3539:3678" ph="..." />
           </folding>
         </state>
       </provider>

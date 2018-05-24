@@ -1,6 +1,7 @@
 import sys
 from nltk.tokenize import RegexpTokenizer
 from collections import Counter
+import numpy as np
 
 tokenizer = RegexpTokenizer(r'\w+')
 
@@ -58,6 +59,21 @@ def parsing(normal_file, sara_file, out_file, vocab_file, stop_words_file):
         fp.close()
     fp_out.close()
 
+def real_vocab(training_file, test_file):
+    vocab = []
+    for file in [training_file, test_file]:
+        fp = open(file)
+        line = fp.readline()
+        while line:
+            line = line.strip().split()
+            for i in range(1, len(line)):
+                id = int(line[i].split(':')[0])
+                if id not in vocab:
+                    vocab.append(id)
+            line = fp.readline()
+    print(len(vocab))
+    np.save('data/real_vocab.npy', np.array(vocab))
+
 if __name__ == '__main__':
     train_normal = 'data/training_data/normal_comments.txt' #sys.argv[1]
     train_sara = 'data/training_data/sara_comments.txt' #sys.argv[2]
@@ -68,5 +84,6 @@ if __name__ == '__main__':
 
     out_train = 'data/training_data_sq.txt'
     out_test = 'data/test_data_sq.txt'
-    parsing(train_normal, train_sara, out_train, vocab_file, stop_words_file)
-    parsing(test_normal, test_sara, out_test, vocab_file, stop_words_file)
+    #parsing(train_normal, train_sara, out_train, vocab_file, stop_words_file)
+    #parsing(test_normal, test_sara, out_test, vocab_file, stop_words_file)
+    real_vocab('data/training_data.txt', 'data/test_data.txt')
