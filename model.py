@@ -4,7 +4,7 @@ from keras.layers import Input, Embedding, Flatten, Dense, subtract
 from keras.models import Model
 from keras.optimizers import Adagrad
 from keras.utils import to_categorical
-from keras import backend as K
+from sklearn.feature_extraction.text import TfidfVectorizer
 import tensorflow as tf
 
 def model_sswe_h(window_size):
@@ -114,13 +114,59 @@ def run_sswe_u(window_size, training_file):
     weights = model.get_layer('embedding').get_weights()[0]
     return weights
 
-#def represent_data(word_embedding):
+def represent_data(training_file, test_file, word_embedding, training_new_represent, test_new_represent):
+    vocab_size, embedding_size = word_embedding.shape
+    fp_out_train = open(training_new_represent, 'w')
+    fp_out_test = open(test_new_represent, 'w')
+
+    corpus = []
+    num_training_doc = 0
+    num_test_doc = 0
+    labels = []
+    for i, file in enumerate([training_file, test_file]):
+        fp = open(file)
+        line = fp.readline()
+        while line:
+            if i==0:
+                num_training_doc += 1
+            else:
+                num_test_doc += 1
+            label_ids = list(map(int, line.strip().split()))
+            corpus.append(label_ids[1:])
+            labels.append(label_ids[0]+1)
+            line = fp.readline()
+        fp.close()
+
+    converter = TfidfVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
+    tfidf_matrix = converter.fit_transform(corpus)
+
+    mapping = {v: k for k, v in converter.vocabulary_.items()}
+    num_doc, read_vocab_size = tfidf_matrix.shape
+    for d in range(num_doc):
+        if d < num_training_doc:
+            fp = fp_out_train
+        else:
+            fp = fp_out_test
+        fp.write('%d ' % labels[d])
+
+        cols = tfidf_matrix[d].tocoo().col
+        for col in cols:
+            index = mapping[col]
+            tfidf_value = tfidf_matrix[d][col]
+            vector = tfidf_value * word_embedding[index]
+            for i, val in enumerate(vector):
+                fp.write('%d:%.6f ' %(index*embedding_size+i+1, val))
+        fp.write('\n')
+
 
 
 if __name__ == '__main__':
     window_size = 3 #sys.argv[1]
     training_file = 'data/training_data_sq.txt'
-    run_sswe_u(window_size, training_file)
+    test_file = 'data/test_data_sq.txt'
+    word_embedding = run_sswe_u(window_size, training_file)
+    represent_data(training_file, test_file, word_embedding, 'data/training_embdding.txt', 'data/test_embedding.txt')
+
 
 
 
