@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from keras.layers import Input, Embedding, Flatten, Dense
+from keras.layers import Input, Embedding, Flatten, Dense, subtract
 from keras.models import Model
 from keras.optimizers import Adagrad
 from keras.utils import to_categorical
@@ -33,20 +33,21 @@ def model_sswe_u(window_size):
     concat_layer_corrupt = concat_layer(embedding_corrupt)
     hidden_corrupt = hidden_layer1(concat_layer_corrupt)
     out_corrupt = out_layer(hidden_corrupt)
+    output = subtract([out_main, out_corrupt])
 
-    model = Model(inputs=[input_original, input_corrupt], outputs=[out_main, out_corrupt])
+    model = Model(inputs=[input_original, input_corrupt], outputs=output)
     return model
 
 def sswe_u_loss(y_true, y_pred, alpha=0.5):
-    out_main, out_corrupt = y_pred[0], y_pred[1]
+
     #print(out_main.type)
-    print(tf.shape(out_main))
-    print(tf.shape(out_corrupt))
-    syntactic_loss = tf.maximum(0., 1 - out_main[0] + out_corrupt[0])
+    print(tf.shape(y_pred))
+    print(tf.shape(y_true))
+    syntactic_loss = tf.maximum(0., 1 - y_pred[0])
     sigma = 1
-    if y_true == 1:
+    if y_true[0] == 1:
         sigma = -1
-    sentiment_loss = tf.maximum(0., 1 - sigma*out_main[1] + sigma*out_corrupt[1])
+    sentiment_loss = tf.maximum(0., 1 - sigma*y_pred[1])
     return alpha*syntactic_loss * (1-alpha)*sentiment_loss
 
 def load_dataset(window_size, training_file, num_negative_samples=None):
@@ -108,10 +109,14 @@ def run_sswe_u(window_size, training_file):
 
     print(model.summary())
 
-    inputs, labels = load_dataset(window_size, training_file, num_negative_samples=100)
-    model.fit(inputs, labels, epochs=100, batch_size=5000, shuffle=True)
+    inputs, labels = load_dataset(window_size, training_file, num_negative_samples=10)
+    print(labels.shape)
+    model.fit([inputs[:,0,:], inputs[:,1,:]], labels, epochs=100, batch_size=5000, shuffle=True)
     weights = model.get_layer('embedding').get_weights()[0]
-    print(weights.shape)
+    return weights
+
+#def represent_data(word_embedding):
+
 
 if __name__ == '__main__':
     window_size = 3 #sys.argv[1]
