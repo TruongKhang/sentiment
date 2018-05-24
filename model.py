@@ -4,6 +4,7 @@ from keras.layers import Input, Embedding, Flatten, Dense
 from keras.models import Model
 from keras.optimizers import Adagrad
 from keras.utils import to_categorical
+import tensorflow as tf
 
 def model_sswe_h(window_size):
     input = Input(shape=(window_size,), dtype='int32', name='input')
@@ -38,11 +39,14 @@ def model_sswe_u(window_size):
 
 def sswe_u_loss(y_true, y_pred, alpha=0.5):
     out_main, out_corrupt = y_pred[0], y_pred[1]
-    syntactic_loss = max(0, 1 - out_main[0] + out_corrupt[0])
+    #print(out_main.type)
+    print(tf.shape(out_main))
+    print(tf.shape(out_corrupt))
+    syntactic_loss = tf.maximum(0., 1 - out_main[0] + out_corrupt[0])
     sigma = 1
     if y_true == 1:
         sigma = -1
-    sentiment_loss = max(0, 1 - sigma*out_main[1] + sigma*out_corrupt[1])
+    sentiment_loss = tf.maximum(0., 1 - sigma*out_main[1] + sigma*out_corrupt[1])
     return alpha*syntactic_loss * (1-alpha)*sentiment_loss
 
 def load_dataset(window_size, training_file, num_negative_samples=None):
@@ -73,7 +77,7 @@ def load_dataset(window_size, training_file, num_negative_samples=None):
             if num_negative_samples is not None:
                 for j in range(num_negative_samples):
                     tr = list(list_words)
-                    tr[i-1] = corrupt_samples[j]
+                    tr[int(window_size/2)] = corrupt_samples[j]
                     sequences.append([list_words, tr])
                     labels.append(label)
             else:
