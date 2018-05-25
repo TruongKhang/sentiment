@@ -1,5 +1,6 @@
 import sys, os
 import numpy as np
+from scipy.sparse import lil_matrix
 from keras.layers import Input, Embedding, Flatten, Dense, subtract
 from keras.models import Model
 from keras.optimizers import Adagrad
@@ -168,7 +169,7 @@ def represent_data(training_file, test_file, word_embedding, training_new_repres
                 fp.write('%d:%.6f ' %(index*embedding_size+i+1, val))
         fp.write('\n')
 
-def do_classification(training_file, test_file, word_embedding):
+def do_classification(training_file, test_file, word_embedding, type='concat'):
     vocab_size, embedding_size = word_embedding.shape
 
     corpus = []
@@ -192,10 +193,19 @@ def do_classification(training_file, test_file, word_embedding):
     converter = TfidfVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
     tfidf_matrix = converter.fit_transform(corpus)
     mapping = {v: k for k, v in converter.vocabulary_.items()}
+    num_doc = len(corpus)
+    del corpus
 
-    X_train, y_train = np.zeros((num_training_doc, embedding_size)), np.zeros(num_training_doc)
-    X_test, y_test = np.zeros((num_test_doc, embedding_size)), np.zeros(num_test_doc)
-    for d in range(len(corpus)):
+    if type == 'concat':
+        X_train, y_train = lil_matrix((num_training_doc, embedding_size*vocab_size), dtype=np.float64), np.zeros(num_training_doc)
+        X_test, y_test = lil_matrix((num_test_doc, embedding_size*vocab_size), dtype=np.float64), np.zeros(num_test_doc)
+    else:
+        X_train, y_train = np.zeros((num_training_doc, embedding_size)), np.zeros(num_training_doc)
+        X_test, y_test = np.zeros((num_test_doc, embedding_size)), np.zeros(num_test_doc)
+    from time import time
+    for d in range(num_doc):
+        t1 = time()
+        #print(d)
         if d < num_training_doc:
             y_train[d] = labels[d]
         else:
@@ -203,21 +213,53 @@ def do_classification(training_file, test_file, word_embedding):
         
 
         cols = tfidf_matrix[d].tocoo().col
+        """indexs = list(map(lambda x: mapping[x], cols))
+        tfidf_values = tfidf_matrix[d].tocoo().data[:, np.newaxis]
+        word_embedding_in_d = tfidf_values * word_embedding[indexs]
+        if type == 'concat':
+            new_cols = np.array(list(map(lambda x: np.arange(x*embedding_size,(x+1)*embedding_size), indexs)), dtype=np.int32)
+            new_cols = new_cols.flatten()
+            if d < num_training_doc:
+                new_rows = np.zeros(len(cols)*embedding_size, dtype=np.int32) + d
+                X_train[new_rows, new_cols] = word_embedding_in_d.flatten()
+            else:
+                new_rows = np.zeros(len(cols)*embedding_size, dtype=np.int32) + d - num_training_doc
+                X_test[new_rows, new_cols] = word_embedding_in_d.flatten()
+        else:
+            vector = np.sum(word_embedding_in_d, axis=0) / len(cols)
+            if d < num_training_doc:
+                X_train[d] = vector
+            else:
+                X_test[d-num_training_doc] = vector"""
+        
+
         for col in cols:
             #print(col)
             index = mapping[col]
             tfidf_value = tfidf_matrix[d, col]
             vector = tfidf_value * word_embedding[index]
             if d < num_training_doc:
-                X_train[d] += vector
+                if type == 'concat':
+                    x_rows = np.zeros(embedding_size, dtype=np.int32) + d
+                    x_cols = np.arange(index*embedding_size, (index+1)*embedding_size, dtype=np.int32)
+                    X_train[x_rows, x_cols] = vector
+                else:
+                    X_train[d] += vector
             else:
-                X_test[d-num_training_doc] += vector
-        if d < num_training_doc:
-            X_train[d] /= len(cols)
-        else:
-            X_test[d-num_training_doc] /= len(cols)
+                if type == 'concat':
+                    x_rows = np.zeros(embedding_size, dtype=np.int32) + d - num_training_doc
+                    x_cols = np.arange(index * embedding_size, (index + 1) * embedding_size, dtype=np.int32)
+                    X_test[x_rows, x_cols] = vector
+                else:
+                    X_test[d-num_training_doc] += vector
+        if type != 'concat':
+            if d < num_training_doc:
+                X_train[d] /= len(cols)
+            else:
+                X_test[d-num_training_doc] /= len(cols)
+        print(time() - t1)
 
-    svm = LinearSVC(C=0.1)
+    svm = LinearSVC(C=0.1)#, class_weight={0: 0.5, 1: 0.5})
     svm.fit(X_train, y_train)
     y_pred = svm.predict(X_test)
     np.savetxt('predicted.txt', y_pred+1, fmt='%u')
@@ -234,10 +276,10 @@ if __name__ == '__main__':
     #word_embedding = run_sswe_h(window_size, training_file, vocab_size)
     word_embedding = np.load('word_embedding.npy')
     #represent_data(training_file, test_file, word_embedding, 'data/training_embedding.txt', 'data/test_embedding.txt')
-    do_classification(training_file, test_file, word_embedding)
+    do_classification(training_file, test_file, word_embedding)#, type='average')
     #os.system('liblinear-1.8/train -s 1 -c 0.1 %s %s' %('data/training_embedding.txt', 'model.txt'))
     #os.system('liblinear-1.8/predict data/test_embedding.txt model.txt predicted.txt')
-    os.system('python evaluation.py predicted.txt')
+    os.system('python3 evaluation.py predicted.txt')
 
 
 
