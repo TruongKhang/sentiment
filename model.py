@@ -1,4 +1,4 @@
-import sys
+import sys, os
 import numpy as np
 from keras.layers import Input, Embedding, Flatten, Dense, subtract
 from keras.models import Model
@@ -76,13 +76,14 @@ def load_dataset(window_size, training_file, num_negative_samples=None):
                     tr = list(list_words)
                     tr[int(window_size/2)] = corrupt_samples[j]
                     sequences.append([list_words, tr])
-                    labels.append(label)
+                    if label == 0:
+                        labels.append([1,1])
+                    else:
+                        labels.append([1,-1])
             else:
                 sequences.append(list_words)
-                if label == 0:
-                    labels.append([1,1])
-                else:
-                    labels.append([1,-1])
+                labels.append(label)
+                
 
 
         line = fp.readline()
@@ -100,7 +101,9 @@ def run_sswe_h(window_size, training_file):
     one_hot_labels = to_categorical(labels, num_classes=2)
     model.fit(inputs, one_hot_labels, epochs=100, batch_size=5000, shuffle=True)
     weights = model.get_layer('embedding').get_weights()[0]
+    np.save('word_embedding.npy', weights)
     print(weights.shape)
+    return weights
 
 def run_sswe_u(window_size, training_file):
     model = model_sswe_u(window_size)
@@ -108,9 +111,9 @@ def run_sswe_u(window_size, training_file):
 
     print(model.summary())
 
-    inputs, labels = load_dataset(window_size, training_file, num_negative_samples=10)
+    inputs, labels = load_dataset(window_size, training_file, num_negative_samples=20)
     print(labels.shape)
-    model.fit([inputs[:,0,:], inputs[:,1,:]], labels, epochs=100, batch_size=5000, shuffle=True)
+    model.fit([inputs[:,0,:], inputs[:,1,:]], labels, epochs=100, batch_size=20000, shuffle=True)
     weights = model.get_layer('embedding').get_weights()[0]
     return weights
 
@@ -141,7 +144,8 @@ def represent_data(training_file, test_file, word_embedding, training_new_repres
     tfidf_matrix = converter.fit_transform(corpus)
 
     mapping = {v: k for k, v in converter.vocabulary_.items()}
-    num_doc, read_vocab_size = tfidf_matrix.shape
+    num_doc, real_vocab_size = tfidf_matrix.shape
+    print(num_doc, real_vocab_size)
     for d in range(num_doc):
         if d < num_training_doc:
             fp = fp_out_train
@@ -151,8 +155,9 @@ def represent_data(training_file, test_file, word_embedding, training_new_repres
 
         cols = tfidf_matrix[d].tocoo().col
         for col in cols:
+            #print(col)
             index = mapping[col]
-            tfidf_value = tfidf_matrix[d][col]
+            tfidf_value = tfidf_matrix[d, col]
             vector = tfidf_value * word_embedding[index]
             for i, val in enumerate(vector):
                 fp.write('%d:%.6f ' %(index*embedding_size+i+1, val))
@@ -164,8 +169,12 @@ if __name__ == '__main__':
     window_size = 3 #sys.argv[1]
     training_file = 'data/training_data_sq.txt'
     test_file = 'data/test_data_sq.txt'
-    word_embedding = run_sswe_u(window_size, training_file)
-    represent_data(training_file, test_file, word_embedding, 'data/training_embdding.txt', 'data/test_embedding.txt')
+    #word_embedding = run_sswe_u(window_size, training_file)
+    word_embedding = run_sswe_h(window_size, training_file)
+    represent_data(training_file, test_file, word_embedding, 'data/training_embedding.txt', 'data/test_embedding.txt')
+    os.system('liblinear-1.8/train -s 1 -c 0.1 %s %s' %('data/training_embedding.txt', 'model.txt'))
+    os.system('liblinear-1.8/predict data/test_embedding.txt model.txt predicted.txt')
+    os.system('python evaluation.py predicted.txt')
 
 
 
