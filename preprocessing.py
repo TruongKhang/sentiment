@@ -67,11 +67,28 @@ def real_vocab(training_file, test_file):
         while line:
             line = line.strip().split()
             for i in range(1, len(line)):
-                id = int(line[i].split(':')[0])
+                #id = int(line[i].split(':')[0])
+                id = int(line[i])
                 if id not in vocab:
                     vocab.append(id)
             line = fp.readline()
     print(len(vocab))
+    mapping = {k: v for v, k in enumerate(vocab)}
+    for file in [training_file, test_file]:
+        fp = open(file)
+        fp_out = open(file.split('.')[0]+'_real_vocab.txt', 'w')
+        line = fp.readline()
+        while line:
+            line = line.strip().split()
+            fp_out.write('%s ' %line[0])
+            for i in range(1, len(line)):
+                id = int(line[i])
+                fp_out.write('%d ' %(mapping[id]))
+            fp_out.write('\n')
+            line = fp.readline()
+        fp.close()
+        fp_out.close()
+
     np.save('data/real_vocab.npy', np.array(vocab))
 
 if __name__ == '__main__':
@@ -86,4 +103,4 @@ if __name__ == '__main__':
     out_test = 'data/test_data_sq.txt'
     #parsing(train_normal, train_sara, out_train, vocab_file, stop_words_file)
     #parsing(test_normal, test_sara, out_test, vocab_file, stop_words_file)
-    real_vocab('data/training_data.txt', 'data/test_data.txt')
+    real_vocab('data/training_data_sq.txt', 'data/test_data_sq.txt')

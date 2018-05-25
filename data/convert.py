@@ -1,6 +1,6 @@
 import numpy as np
-fp = open('test_embedding.txt')
-fp_out = open('new_test_embedding.txt', 'w')
+fp = open('training_embedding.txt')
+fp_out = open('new_training_embedding.txt', 'w')
 line = fp.readline()
 while line:
 	line = line.strip().split()
