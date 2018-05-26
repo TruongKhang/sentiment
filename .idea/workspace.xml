@@ -2,63 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be9ba3d6-5e0b-4267-b8d7-75bf72d8688c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/real_vocab.npy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/test_data_sq_real_vocab.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/training_data_sq_real_vocab.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/COPYRIGHT" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/Makefile.win" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blas.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blas.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blasp.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/daxpy.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/daxpy.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/ddot.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/ddot.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dnrm2.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dnrm2.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dscal.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dscal.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/heart_scale" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.def" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/libsvmread.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/libsvmwrite.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/linear_model_matlab.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/linear_model_matlab.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/make.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/octave-workspace" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/predict.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/run.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/train.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/predict" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/predict.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/liblinear.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/liblinearutil.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/train" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/train.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/predicted.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_labels.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/word_embedding_sswe_h.npy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_data.txt" afterPath="$PROJECT_DIR$/data/test_data.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/training_data.txt" afterPath="$PROJECT_DIR$/data/training_data.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evaluation.py" afterPath="$PROJECT_DIR$/evaluation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model.py" afterPath="$PROJECT_DIR$/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preprocessing.py" afterPath="$PROJECT_DIR$/preprocessing.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/word_embedding.npy" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -404,7 +348,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

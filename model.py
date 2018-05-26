@@ -98,7 +98,7 @@ if __name__ == '__main__':
     window_size = 3
     embedding_size = 50
     alpha = 0.5
-    num_negative_samples = 2
+    num_negative_samples = 15
     training_file = 'data/training_data_real_vocab.txt'
     test_file = 'data/test_data_real_vocab.txt'
     vocab_file = 'data/real_vocab.txt'
@@ -110,7 +110,7 @@ if __name__ == '__main__':
                                 alpha=alpha, num_negative_samples=num_negative_samples)
     #word_embedding = run_sswe_h(window_size, training_file, vocab_size, embedding_size)
     #word_embedding = np.load('word_embedding.npy')
-    new_data = represent_doc_embedding(training_file, test_file, word_embedding=word_embedding, type='average')
+    new_data = represent_doc_embedding(training_file, test_file, word_embedding=word_embedding, type='concat')
     do_classification(new_data, C=1.1)
 
 
