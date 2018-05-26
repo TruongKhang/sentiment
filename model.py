@@ -81,7 +81,7 @@ def run_sswe_u(window_size, training_file, vocab_size, embedding_size, alpha=0.5
 def do_classification(data, C):
     print('Classification by SVM...')
     training_docs, training_labels, test_docs, test_labels = data[0], data[1], data[2], data[3]
-    svm = LinearSVC(C=0.1, class_weight={0: 0.3, 1: 0.7})
+    svm = LinearSVC(C=C, class_weight={0: 0.3, 1: 0.7})
     svm.fit(training_docs, training_labels)
     labels_pred = svm.predict(test_docs)
 
@@ -106,12 +106,14 @@ if __name__ == '__main__':
     with open(vocab_file) as fp:
         vocab_size = len(fp.readlines())
 
-    word_embedding = run_sswe_u(window_size, training_file, vocab_size, embedding_size,
-                                alpha=alpha, num_negative_samples=num_negative_samples)
+    #word_embedding = run_sswe_u(window_size, training_file, vocab_size, embedding_size,
+    #                            alpha=alpha, num_negative_samples=num_negative_samples)
     #word_embedding = run_sswe_h(window_size, training_file, vocab_size, embedding_size)
-    #word_embedding = np.load('word_embedding.npy')
+    word_embedding = np.load('word_embedding.npy')
     new_data = represent_doc_embedding(training_file, test_file, word_embedding=word_embedding, type='concat')
-    do_classification(new_data, C=1.1)
+    #for c in np.arange(0.5,2,0.1):
+        #print(c)
+    do_classification(new_data, C=1.0)
 
 
 
