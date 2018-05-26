@@ -2,8 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be9ba3d6-5e0b-4267-b8d7-75bf72d8688c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/real_vocab.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/test_data_sq_real_vocab.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/training_data_sq_real_vocab.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/COPYRIGHT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/Makefile.win" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blas.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blas.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/blasp.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/daxpy.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/daxpy.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/ddot.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/ddot.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dnrm2.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dnrm2.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dscal.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/blas/dscal.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/heart_scale" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.def" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/linear.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/libsvmread.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/libsvmwrite.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/linear_model_matlab.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/linear_model_matlab.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/make.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/octave-workspace" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/predict.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/run.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/matlab/train.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/predict" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/predict.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/liblinear.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/python/liblinearutil.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/train" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/train.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/liblinear-1.8/tron.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/predicted.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_labels.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/word_embedding_sswe_h.npy" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_data.txt" afterPath="$PROJECT_DIR$/data/test_data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/training_data.txt" afterPath="$PROJECT_DIR$/data/training_data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evaluation.py" afterPath="$PROJECT_DIR$/evaluation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model.py" afterPath="$PROJECT_DIR$/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preprocessing.py" afterPath="$PROJECT_DIR$/preprocessing.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,22 +76,21 @@
       <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+            <state relative-caret-position="420">
+              <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-                <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+                <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="254" column="63" lean-forward="true" selection-start-line="254" selection-start-column="63" selection-end-line="254" selection-end-column="63" />
+            <state relative-caret-position="69">
+              <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -44,7 +98,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dataset.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,7 +125,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/load_dataset.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
+        <option value="$PROJECT_DIR$/dataset.py" />
+        <option value="$PROJECT_DIR$/evaluation.py" />
         <option value="$PROJECT_DIR$/model.py" />
       </list>
     </option>
@@ -78,7 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -107,7 +183,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,6 +221,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="sentiment" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="sentiment" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -283,14 +376,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.preprocessing" />
       <item index="1" class="java.lang.String" itemvalue="Python.model" />
+      <item index="2" class="java.lang.String" itemvalue="Python.evaluation" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.preprocessing" />
-        <item index="1" class="java.lang.String" itemvalue="Python.model" />
+        <item index="1" class="java.lang.String" itemvalue="Python.evaluation" />
+        <item index="2" class="java.lang.String" itemvalue="Python.model" />
       </list>
     </recent_temporary>
   </component>
@@ -309,9 +404,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -340,12 +435,146 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="111" column="105" lean-forward="false" selection-start-line="111" selection-start-column="105" selection-end-line="111" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="43" lean-forward="false" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="152" column="70" lean-forward="true" selection-start-line="152" selection-start-column="70" selection-end-line="152" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
           <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
           </folding>
         </state>
       </provider>
@@ -366,8 +595,7 @@
           <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
           </folding>
         </state>
       </provider>
@@ -388,8 +616,7 @@
           <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
           </folding>
         </state>
       </provider>
@@ -410,8 +637,7 @@
           <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
           </folding>
         </state>
       </provider>
@@ -432,8 +658,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
           </folding>
         </state>
       </provider>
@@ -448,26 +673,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/test_data_sq.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test_data_sq.txt" />
     <entry file="file://$PROJECT_DIR$/data/test_data_sq_real_vocab.txt" />
-    <entry file="file://$PROJECT_DIR$/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1527258687325" expanded="true" signature="2121:2138" ph="..." />
-            <marker date="1527258687325" expanded="true" signature="3653:3659" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/test_data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1380">
@@ -475,12 +682,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/real_vocab.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-386266">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1527347178816" expanded="true" signature="1818:1835" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="100" lean-forward="false" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="254" column="63" lean-forward="true" selection-start-line="254" selection-start-column="63" selection-end-line="254" selection-end-column="63" />
+        <state relative-caret-position="69">
+          <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

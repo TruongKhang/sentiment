@@ -5,16 +5,8 @@ import numpy as np
 
 tokenizer = RegexpTokenizer(r'\w+')
 
-def read_vocab_as_dict(file_path):
+def read_vocab(file_path):
     fp = open(file_path)
-    """line = fp.readline()
-    vocab = {}
-    index = 0
-    while line:
-        line = line.strip().split()
-        vocab[line[0].lower()] = index
-        line = fp.readline()
-        index += 1"""
     vocab = map(lambda x: x.strip().split()[0].lower(), fp.readlines())
     fp.close()
     return list(vocab)
@@ -29,7 +21,7 @@ def parsing(normal_file, sara_file, out_file, vocab_file, stop_words_file):
 
     fp_out = open(out_file, 'w')
 
-    vocab = read_vocab_as_dict(vocab_file)
+    vocab = read_vocab(vocab_file)
     stop_words = read_stop_words(stop_words_file)
 
     for label, file in enumerate([normal_file, sara_file]):
@@ -40,11 +32,8 @@ def parsing(normal_file, sara_file, out_file, vocab_file, stop_words_file):
             line = line.strip()
             if len(line) >= 2:
 
-                print(label)
+                #print(label)
                 words = tokenizer.tokenize(line.lower())
-                #word_counts = Counter(words)
-                #unique_words = word_counts.keys()
-                #counts = list(word_counts.values())
                 check = True
                 for i,word in enumerate(words):
                     if (word not in stop_words) and (word in vocab):
@@ -59,8 +48,10 @@ def parsing(normal_file, sara_file, out_file, vocab_file, stop_words_file):
         fp.close()
     fp_out.close()
 
-def real_vocab(training_file, test_file):
-    vocab = []
+def extract_real_vocab(training_file, test_file, vocab_file):
+    vocab = read_vocab(vocab_file)
+
+    real_vocab = []
     for file in [training_file, test_file]:
         fp = open(file)
         line = fp.readline()
@@ -69,11 +60,11 @@ def real_vocab(training_file, test_file):
             for i in range(1, len(line)):
                 #id = int(line[i].split(':')[0])
                 id = int(line[i])
-                if id not in vocab:
-                    vocab.append(id)
+                if id not in real_vocab:
+                    real_vocab.append(id)
             line = fp.readline()
-    print(len(vocab))
-    mapping = {k: v for v, k in enumerate(vocab)}
+    print(len(real_vocab))
+    mapping = {k: v for v, k in enumerate(real_vocab)}
     for file in [training_file, test_file]:
         fp = open(file)
         fp_out = open(file.split('.')[0]+'_real_vocab.txt', 'w')
@@ -89,7 +80,10 @@ def real_vocab(training_file, test_file):
         fp.close()
         fp_out.close()
 
-    np.save('data/real_vocab.npy', np.array(vocab))
+    file_real_vocab = open('data/real_vocab.txt', 'w')
+    for id in real_vocab:
+        file_real_vocab.write('%s\n' %vocab[id])
+    file_real_vocab.close()
 
 if __name__ == '__main__':
     train_normal = 'data/training_data/normal_comments.txt' #sys.argv[1]
@@ -99,8 +93,8 @@ if __name__ == '__main__':
     vocab_file = 'data/dicts/id_full.txt' #sys.argv[5]
     stop_words_file = 'data/dicts/stop_words.txt' #sys.argv[6]
 
-    out_train = 'data/training_data_sq.txt'
-    out_test = 'data/test_data_sq.txt'
-    #parsing(train_normal, train_sara, out_train, vocab_file, stop_words_file)
-    #parsing(test_normal, test_sara, out_test, vocab_file, stop_words_file)
-    real_vocab('data/training_data_sq.txt', 'data/test_data_sq.txt')
+    out_train = 'data/training_data.txt'
+    out_test = 'data/test_data.txt'
+    parsing(train_normal, train_sara, out_train, vocab_file, stop_words_file)
+    parsing(test_normal, test_sara, out_test, vocab_file, stop_words_file)
+    extract_real_vocab('data/training_data.txt', 'data/test_data.txt', vocab_file)
