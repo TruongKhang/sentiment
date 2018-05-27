@@ -1,6 +1,7 @@
+import sys
 import gensim
 import numpy as np
-def word2vec(training_file, vocab_size):
+def word2vec(training_file, vocab_size, window_size, embedding_size):
     corpus_train = []
     num_training_doc = 0
     y_train = list()
@@ -14,15 +15,22 @@ def word2vec(training_file, vocab_size):
         line = fp.readline()
     fp.close()
     corpus_train = list(map(str, corpus_train))
-    model = gensim.models.Word2Vec(corpus_train, window=5, size=50, min_count=1, workers=4)
+    model = gensim.models.Word2Vec(corpus_train, window=window_size, size=embedding_size, min_count=1, workers=4)
     model.train(corpus_train, total_examples=model.corpus_count, epochs=100)
-    word_embedding = np.zeros((vocab_size, 50))
+    word_embedding = np.zeros((vocab_size, embedding_size))
     for i in range(vocab_size):
         if str(i) in list(model.wv.vocab):
             word_embedding[i] = model.wv[str(i)]
-        print(i) #word_embedding[i])
     np.save('word2vec.npy', word_embedding)
 
 if __name__ == '__main__':
-    vocab_size = len(np.load('data/real_vocab.npy'))
-    word2vec('data/training_data_sq_real_vocab.txt', vocab_size)
+    # Setting parameters
+    window_size = sys.argv[1]
+    embedding_size = sys.argv[2]
+    training_file = 'data/training_data_real_vocab.txt'
+    test_file = 'data/test_data_real_vocab.txt'
+    vocab_file = 'data/real_vocab.txt'
+
+    with open(vocab_file) as fp:
+        vocab_size = len(fp.readlines())
+    word2vec(training_file, vocab_size, window_size, embedding_size)
