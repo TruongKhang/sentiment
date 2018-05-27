@@ -45,7 +45,7 @@ def load_dataset(window_size, training_file, vocab_size, num_negative_samples=No
     return (np.array(sequences, dtype=np.int32), np.array(labels, dtype=np.int32))
 
 def represent_doc_embedding(training_file, test_file, word_embedding=None, type='concat'):
-    print('Represeting document...')
+    print('Representing document...')
     corpus_train = []
     corpus_test = []
     num_training_doc = 0

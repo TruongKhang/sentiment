@@ -71,15 +71,15 @@ def run_sswe_u(window_size, training_file, vocab_size, embedding_size, alpha=0.5
     inputs, labels = load_dataset(window_size, training_file, vocab_size, num_negative_samples=num_negative_samples)
     print(labels.shape)
 
-    model.fit([inputs[:,0,:], inputs[:,1,:]], labels, epochs=100, batch_size=10000, shuffle=True)
+    model.fit([inputs[:,0,:], inputs[:,1,:]], labels, epochs=2, batch_size=10000, shuffle=True)
     weights = model.get_layer('embedding').get_weights()[0]
     np.save('word_embedding.npy', weights)
     return weights
 
 if __name__ == '__main__':
     # Setting parameters
-    window_size = sys.argv[1]
-    embedding_size = sys.argv[2]
+    window_size = int(sys.argv[1])
+    embedding_size = int(sys.argv[2])
     alpha = 0.5
     num_negative_samples = 15
     training_file = 'data/training_data_real_vocab.txt'

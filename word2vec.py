@@ -25,8 +25,8 @@ def word2vec(training_file, vocab_size, window_size, embedding_size):
 
 if __name__ == '__main__':
     # Setting parameters
-    window_size = sys.argv[1]
-    embedding_size = sys.argv[2]
+    window_size = int(sys.argv[1])
+    embedding_size = int(sys.argv[2])
     training_file = 'data/training_data_real_vocab.txt'
     test_file = 'data/test_data_real_vocab.txt'
     vocab_file = 'data/real_vocab.txt'
