@@ -1,1 +1,1 @@
-# sentiment
+Package required: numpy, scipy, matplotlib, nltk, tensorflow, keras, gesim
